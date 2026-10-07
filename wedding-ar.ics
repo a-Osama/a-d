@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Ahmed and Dalia//Wedding Invitation//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:ahmed-dalia-wedding-2026@coco-loco
+DTSTAMP:20260101T000000Z
+DTSTART:20261014T130000Z
+DTEND:20261014T180000Z
+SUMMARY:أحمد وداليا — جلسة تصوير وحفل زفاف
+LOCATION:كوكو لوكو
+DESCRIPTION:جلسة التصوير الساعة ٤ مساءً، حفل الاستقبال الساعة ٨ مساءً، وبداية حفل الزفاف الساعة ٩ مساءً.
+END:VEVENT
+END:VCALENDAR

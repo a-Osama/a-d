@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ahmed &amp; Dalia | 14 October 2026</title>
+<meta property="og:title" content="Ahmed &amp; Dalia | 14 October 2026">
+<meta property="og:site_name" content="Ahmed & Dalia Wedding Invitation">
+<meta property="og:description" content="Join Ahmed and Dalia for their wedding celebration at Coco Loco Wedding Venue in October 2026.">
+<meta property="og:image" content="https://aboal3z14.github.io/S-M/preview.jpg">
+<meta property="og:image:alt" content="Ahmed and Dalia wedding invitation with a watercolor garden arch">
+<meta name="description" content="Celebrate the wedding of Ahmed and Dalia on 14 October 2026 at Coco Loco Wedding Venue.">
+<meta name="theme-color" content="#f8f7f0">
+<meta property="og:type" content="website">
+
+<link rel="icon" href="assets/monogram.svg" type="image/svg+xml">
+<link rel="stylesheet" href="fonts.css">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="enhancements.css">
+</head>
+<body class="ready">
+<div class="reading-progress" aria-hidden="true"><span></span></div>
+
+<!-- ================= BACKGROUND MUSIC ================= -->
+<audio id="bg-music" loop>
+  <source src="JVKE, Bryant Barnes, Emilio Piano - Juliet (visualizer) [-ZKuuWwmHeM].m4a" type="audio/mp4">
+</audio>
+
+<button id="music-toggle" class="muted" aria-label="Play music" aria-pressed="false">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+    <path d="M4 9v6h4l5 4V5L8 9H4z"/>
+    <path d="M16.5 8.5a5 5 0 0 1 0 7"/>
+    <path d="M19 6a9 9 0 0 1 0 12"/>
+  </svg><span id="music-label">Music</span>
+</button>
+
+<header id="top">
+  <a class="brand hero-monogram" href="#welcome" aria-label="Ahmed and Dalia, home">A<span>&amp;</span>D</a>
+  <nav class="nav-wrap" aria-label="Main navigation">
+    <a class="active" href="#welcome" data-i18n="nav.welcome">Welcome</a>
+    <a href="#schedule" data-i18n="nav.schedule">The Day</a>
+    <a href="#parking" data-i18n="nav.parking">Getting There</a>
+    <a href="#request" data-i18n="nav.request">Memories</a>
+    <a href="#leave-message" data-i18n="nav.guestbook">Guestbook</a>
+  </nav>
+  <div class="header-actions">
+    <button class="language-toggle" id="language-toggle" aria-label="Switch to Arabic" lang="ar">العربية</button>
+    <a class="header-rsvp" href="#leave-message" data-i18n="header.message">Leave us a note ↗</a>
+  </div>
+</header>
+<main>
+<!-- ================= HERO ================= -->
+<section class="hero" id="welcome" aria-labelledby="couple-names">
+  <div class="hero-inner">
+    <svg class="hero-sprig" viewBox="0 0 100 200" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M50 190C65 145 30 100 53 18M52 155C22 145 15 127 20 114C42 117 51 137 52 155ZM49 127C76 113 84 98 80 86C59 92 51 112 49 127ZM45 97C20 84 18 68 22 58C41 65 46 80 45 97ZM49 66C70 56 77 43 74 33C56 39 50 54 49 66ZM52 35C38 28 36 15 39 6C51 13 54 25 52 35Z"/></svg>
+    <p class="hero-eyebrow" data-i18n="hero.eyebrow">An invitation to our forever</p>
+    <h1 class="hero-names" id="couple-names"><span data-i18n="couple.last">Ahmed</span><span class="hero-amp">&amp;</span><span data-i18n="couple.first">Dalia</span></h1>
+    <p class="hero-description" data-i18n="hero.description">Together with our families, we invite you to an evening of love, laughter, and a little magic.</p>
+    <p class="hero-date" data-i18n="hero.date">Wednesday, 14 October 2026</p>
+    <p class="hero-location" data-i18n="hero.location">Coco Loco Wedding Venue</p>
+    <div class="hero-actions">
+      <a class="primary-btn" href="#schedule" data-i18n="hero.discover">Explore the day</a>
+      <a href="wedding-en.ics" id="calendar-link" class="hero-calendar" data-i18n="guest.calendar">Add to Calendar</a>
+    </div>
+    <span class="hero-note" data-i18n="hero.note"></span>
+  </div>
+  <figure class="hero-art">
+    <div class="art-window"><img src="assets/garden-illustration.webp" width="1024" height="1536" alt="Watercolor garden arch surrounded by roses and olive branches" fetchpriority="high"></div>
+    <div class="date-seal" aria-label="Save the date, 14 October 2026"><small data-i18n="hero.save">Save the date</small><strong>14.10</strong><span>2026</span></div>
+    <figcaption class="art-caption" data-i18n="hero.caption">A beautiful day. An even more beautiful beginning.</figcaption>
+  </figure>
+</section>
+<section class="countdown-band" aria-label="Countdown to the wedding">
+  <div class="countdown-intro"><span data-i18n="countdown.title">Counting the moments</span><small data-i18n="countdown.subtitle">Until we say forever</small></div>
+<div class="countdown" id="countdown">
+      <div class="cell"><div class="num" id="cd-days">00</div><div class="label" data-i18n="hero.days">Days</div></div>
+      <div class="cell"><div class="num" id="cd-hours">00</div><div class="label" data-i18n="hero.hours">Hours</div></div>
+      <div class="cell"><div class="num" id="cd-mins">00</div><div class="label" data-i18n="hero.mins">Minutes</div></div>
+      <div class="cell"><div class="num" id="cd-secs">00</div><div class="label" data-i18n="hero.secs">Seconds</div></div>
+    </div>
+</section>
+
+<div class="divider reveal">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+    <path d="M12 2c-2 4-2 8 0 12s2 8 0 8M12 6c3 1 5 3 5 6s-2 5-5 6M12 6c-3 1-5 3-5 6s2 5 5 6"/>
+  </svg>
+</div>
+
+<section class="announcement reveal" aria-label="Welcome message">
+  <div class="eyebrow" data-i18n="announcement.eyebrow">A Joyful Beginning</div>
+  <p data-i18n="announcement.text">“Two hearts, one beautiful beginning, and a day we cannot wait to share with you.”</p>
+  <span class="small-line"></span>
+</section>
+
+<!-- ================= SCHEDULE ================= -->
+<section class="block reveal" id="schedule">
+  <span class="section-index" aria-hidden="true">01 /</span>
+  <div class="eyebrow" data-i18n="schedule.eyebrow">The Details</div>
+  <h2 data-i18n="schedule.title">A day to remember</h2>
+  <p class="lede" data-i18n="schedule.lede">An evening of happy tears, warm embraces, and memories we will keep forever.</p>
+
+  <div class="agenda">
+    <div class="item">
+      <div class="time" data-i18n="schedule.photoTime">4:00 PM</div>
+      <div>
+        <div class="title" data-i18n="schedule.ceremony">Photo Session</div>
+        <div class="desc" data-i18n="schedule.venue">With our nearest and dearest</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="time" data-i18n="schedule.receptionTime">8:00 PM</div>
+      <div>
+        <div class="title" data-i18n="schedule.cocktail">Reception</div>
+        <div class="desc" data-i18n="schedule.venue2">A warm welcome to our celebration</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="time" data-i18n="schedule.weddingTime">9:00 PM</div>
+      <div>
+        <div class="title" data-i18n="schedule.reception">Beginning Of Wedding</div>
+        <div class="desc" data-i18n="schedule.venue3">Let the joy begin</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider reveal">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+    <path d="M12 2c-2 4-2 8 0 12s2 8 0 8M12 6c3 1 5 3 5 6s-2 5-5 6M12 6c-3 1-5 3-5 6s2 5 5 6"/>
+  </svg>
+</div>
+
+<!-- ================= DIRECTIONS + PARKING ================= -->
+<section class="block reveal" id="parking" aria-labelledby="venue-heading">
+  <span class="section-index" aria-hidden="true">02 /</span>
+  <div class="eyebrow" data-i18n="directions.eyebrow">A place for our beginning</div>
+  <h2 id="venue-heading" data-i18n="directions.title">Meet us at Coco Loco</h2>
+  <p class="lede" data-i18n="directions.lede">One special place, all our favorite people. Join us at Coco Loco Wedding Venue to celebrate the beginning of our forever.</p>
+  <div class="venue-layout">
+    <div class="venue-card">
+      <svg class="venue-icon" viewBox="0 0 60 72" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M30 65S9 45 9 28a21 21 0 0 1 42 0c0 17-21 37-21 37Z"/><circle cx="30" cy="28" r="9"/><path d="m30 23 2 3.5 4 .7-2.8 3 .5 4-3.7-1.8-3.7 1.8.5-4-2.8-3 4-.7Z"/></svg>
+      <p class="eyebrow" data-i18n="venue.kicker">The celebration</p>
+      <h3 data-i18n="venue.name">Coco Loco Wedding Venue</h3>
+      <p class="venue-day" data-i18n="hero.date">Wednesday, 14 October 2026</p>
+      <p class="venue-time" data-i18n="venue.time">Reception from 8:00 PM · Cairo time</p>
+      <a class="primary-btn" id="directions-link" data-i18n="guest.directions" href="https://www.google.com/maps/dir/27.1941632,31.1721984/27.1877335,31.0409508/@27.1900258,31.0250778,32124m/data=!3m2!1e3!4b1!4m4!4m3!1m1!4e1!1m0?entry=ttu&amp;g_ep=EgoyMDI2MDkzMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">Get Directions</a>
+      <a class="venue-facebook" data-i18n="venue.facebook" href="https://www.facebook.com/p/Coco-Loco-Wedding-Venue-61556604132324/" target="_blank" rel="noopener noreferrer">Discover the venue ↗</a>
+    </div>
+    <div class="venue-map">
+      <iframe title="Coco Loco Wedding Venue location" src="https://maps.google.com/maps?q=27.1877335%2C31.0409508&amp;z=14&amp;output=embed" width="600" height="420" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      <a class="map-open-link" href="https://www.google.com/maps/dir/27.1941632,31.1721984/27.1877335,31.0409508/@27.1900258,31.0250778,32124m/data=!3m2!1e3!4b1!4m4!4m3!1m1!4e1!1m0?entry=ttu&amp;g_ep=EgoyMDI2MDkzMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" data-i18n="venue.map">Open in Google Maps ↗</a>
+    </div>
+  </div>
+  <div class="arrival-note"><span aria-hidden="true">✧</span><p data-i18n="venue.arrival">Come a little early, settle in, and let the evening unfold.</p></div>
+</section>
+
+<div class="divider reveal">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+    <path d="M12 2c-2 4-2 8 0 12s2 8 0 8M12 6c3 1 5 3 5 6s-2 5-5 6M12 6c-3 1-5 3-5 6s2 5 5 6"/>
+  </svg>
+</div>
+
+<!-- ================= SHARE YOUR MOMENT ================= -->
+<section class="block reveal" id="request">
+<div class="memories-inner"><div>
+<span class="section-index" aria-hidden="true">03 /</span>
+  <div class="eyebrow" data-i18n="request.eyebrow">Through your eyes</div>
+  <h2 data-i18n="request.title">Little moments. Forever memories.</h2>
+  <p class="lede" data-i18n="request.lede">The happy tears, the dance-floor smiles, the moments in between. We would love to see the day through your eyes and keep every little memory.</p>
+  <p class="sharing-note" data-i18n="request.pending">Our photo album will open here soon.</p>
+
+</div><div>
+  <div class="memory-illustration" aria-hidden="true">
+    <svg viewBox="0 0 160 170" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M35 71h19l9-14h35l9 14h19a7 7 0 0 1 7 7v55a7 7 0 0 1-7 7H35a7 7 0 0 1-7-7V78a7 7 0 0 1 7-7Z"/><circle cx="80" cy="104" r="24"/><circle cx="80" cy="104" r="18"/><circle cx="117" cy="83" r="3"/><path d="M16 142C8 105 20 58 39 28M26 76C5 66 8 46 15 43C25 53 27 66 26 76ZM32 47C55 47 60 28 56 22C41 25 34 36 32 47ZM142 142c8-37-4-84-23-114M132 76c21-10 18-30 11-33C133 53 131 66 132 76ZM126 47c-23 0-28-19-24-25C117 25 124 36 126 47Z"/><path d="m80 25 2.5 7.5L90 35l-7.5 2.5L80 45l-2.5-7.5L70 35l7.5-2.5Z"/></svg>
+  </div>
+  <p class="qr-caption" data-i18n="request.qrCaption">Every little memory matters.</p>
+</div></div>
+</section>
+
+<div class="divider reveal">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+    <path d="M12 2c-2 4-2 8 0 12s2 8 0 8M12 6c3 1 5 3 5 6s-2 5-5 6M12 6c-3 1-5 3-5 6s2 5 5 6"/>
+  </svg>
+</div>
+
+<!-- ================= LEAVE A MESSAGE / GUESTBOOK ================= -->
+<section class="block reveal" id="leave-message">
+  <span class="section-index" aria-hidden="true">04 /</span>
+  <div class="eyebrow" data-i18n="guestbook.eyebrow">For The Couple</div>
+  <h2 data-i18n="guestbook.title">A little note, a lot of love</h2>
+  <p class="lede" data-i18n="guestbook.lede">A few kind words, a memory, a wish for the years ahead — whatever's in your heart, we'd love to keep it here.</p>
+
+  <div class="guestbook-layout">
+    <div class="guestbook-form-wrap">
+      <form id="guestbook-form">
+        <div class="gb-row">
+          <div>
+            <label for="gb-name" data-i18n="guestbook.nameLabel">Your Name</label>
+            <input type="text" id="gb-name" maxlength="40" data-i18n-placeholder="guestbook.namePlaceholder" placeholder="e.g. Alex" required>
+          </div>
+          <div>
+            <label for="gb-relation" data-i18n="guestbook.relationLabel">From (optional)</label>
+            <input type="text" id="gb-relation" maxlength="40" data-i18n-placeholder="guestbook.relationPlaceholder" placeholder="e.g. Groom&#x27;s friend">
+          </div>
+        </div>
+        <div>
+          <label for="gb-message" data-i18n="guestbook.messageLabel">Your Message</label>
+          <textarea id="gb-message" maxlength="300" data-i18n-placeholder="guestbook.messagePlaceholder" placeholder="Write your wishes for Ahmed &amp; Dalia..." required></textarea>
+          <div class="char-count"><span id="gb-char-count">0</span>/300</div>
+        </div>
+        <button type="submit" id="gb-submit-btn">
+          <span id="gb-submit-label" data-i18n="guestbook.submit">Send Message</span>
+        </button>
+        <div class="gb-status" id="gb-status" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+
+    <div>
+      <div class="guestbook-wall-head">
+        <h3 data-i18n="guestbook.wallTitle">Words we will treasure</h3>
+        <span class="gb-count" id="gb-count"></span>
+      </div>
+      <div class="guestbook-wall" id="guestbook-wall">
+        <div class="gb-loading" id="gb-loading">
+          <div class="gb-dots"><span></span><span></span><span></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider reveal">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+    <path d="M12 2c-2 4-2 8 0 12s2 8 0 8M12 6c3 1 5 3 5 6s-2 5-5 6M12 6c-3 1-5 3-5 6s2 5 5 6"/>
+  </svg>
+</div>
+
+</main>
+<footer>
+  <p class="footer-script" data-i18n="footer.script">With love, always</p>
+  <div class="footer-names"><span data-i18n="couple.last">Ahmed</span> &amp; <span data-i18n="couple.first">Dalia</span></div>
+  <p class="footer-text" data-i18n="footer.text">14 October 2026 · Coco Loco Wedding Venue</p>
+  <div class="footer-bottom"><span data-i18n="footer.made">Made with love, for a day full of it.</span><a href="#welcome" data-i18n="footer.back">Back to the beginning ↑</a></div>
+</footer>
+
+<!-- ================= EASTER EGG: CONGRATS OVERLAY ================= -->
+<div id="congrats-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="congrats-inner">
+    <div class="congrats-icon" aria-hidden="true">🎉</div>
+    <h2 data-i18n="egg.title">You Found a Secret!</h2>
+    <p data-i18n="egg.text">Congratulations, you clever guest — you've uncovered one of our hidden surprises. Thanks for being part of our story.</p>
+    <!--
+      Congrats sound: drop your two MP3 files in the same folder as this HTML file
+      (right next to index.html), named exactly:
+        congrats-en.mp3  -> plays when the site is in English
+        congrats-ar.mp3  -> plays when the site is in Arabic
+      Nothing else to configure — the script below picks the right file automatically.
+    -->
+    <audio id="congrats-audio" preload="none"></audio>
+    <a href="#" id="congrats-back" class="pill-btn on-dark" data-i18n="egg.back">Back to Invitation</a>
+  </div>
+</div>
+
+<!--
+  Easter-egg badges: drop your 3 PNG files in the same folder as this HTML file
+  and update the src="" below for each one, e.g. src="badge1.png". They stay
+  hidden until that specific egg is found, then appear bottom-right and stay
+  there (even after the page is refreshed).
+
+  Badge sound effect: drop a very short MP3 (a little "ding"/"pop" works great)
+  in the same folder, named exactly:
+    badge-unlock.mp3
+  It plays automatically the moment the guest taps "Back to Invitation" and a
+  badge appears — nothing else to configure.
+-->
+<audio id="badge-sfx" preload="none" src="badge-unlock.mp3"></audio>
+<div id="egg-badges" aria-hidden="true">
+  <div class="egg-badge" id="badge-1" title="Secret #1 found"><img src="badge1.png" alt="Secret 1 badge"></div>
+  <div class="egg-badge" id="badge-2" title="Secret #2 found"><img src="badge2.png" alt="Secret 2 badge"></div>
+  <div class="egg-badge" id="badge-3" title="Secret #3 found"><img src="badge3.png" alt="Secret 3 badge"></div>
+</div>
+
+<script>
+  const WEDDING_DATE = new Date("2026-10-14T21:00:00+03:00");
+
+  function setNum(el, value){
+    const formatted = String(value).padStart(2,'0');
+    if(el.textContent !== formatted){
+      el.textContent = formatted;
+      el.classList.remove('tick');
+      void el.offsetWidth;
+      el.classList.add('tick');
+    }
+  }
+
+  function updateCountdown(){
+    const now = new Date();
+    let diff = WEDDING_DATE - now;
+    if(diff < 0) diff = 0;
+
+    const days  = Math.floor(diff / (1000*60*60*24));
+    const hours = Math.floor((diff / (1000*60*60)) % 24);
+    const mins  = Math.floor((diff / (1000*60)) % 60);
+    const secs  = Math.floor((diff / 1000) % 60);
+
+    setNum(document.getElementById('cd-days'),  days);
+    setNum(document.getElementById('cd-hours'), hours);
+    setNum(document.getElementById('cd-mins'),  mins);
+    setNum(document.getElementById('cd-secs'),  secs);
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  // ---- Scroll-reveal ----
+  const revealEls = document.querySelectorAll('.reveal');
+  document.body.classList.add('motion-ready');
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if('IntersectionObserver' in window && !prefersReduced){
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('in-view');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('in-view'));
+  }
+
+  // ---- Add wedding date to calendar ----
+  const calendarLink = document.getElementById('calendar-link');
+  if(calendarLink){
+    calendarLink.addEventListener('click', (event) => {
+      event.preventDefault();
+
+      const currentLang = document.documentElement.getAttribute('data-lang') === 'ar' ? 'ar' : 'en';
+
+      const EVT_TEXT = {
+        en: {
+          title: 'Ahmed & Dalia — Photo Session and Wedding Celebration',
+          location: 'Coco Loco Wedding Venue',
+          description: 'Photo session at 4:00 PM, reception at 8:00 PM, and wedding begins at 9:00 PM.'
+        },
+        ar: {
+          title: 'أحمد وداليا — جلسة تصوير وحفل زفاف',
+          location: 'كوكو لوكو',
+          description: 'جلسة التصوير الساعة ٤ مساءً، حفل الاستقبال الساعة ٨ مساءً، وبداية حفل الزفاف الساعة ٩ مساءً.'
+        }
+      };
+
+      const EVT = Object.assign(
+        { start: '20261014T130000Z', end: '20261014T180000Z', uid: 'ahmed-dalia-wedding-2026@coco-loco' },
+        EVT_TEXT[currentLang]
+      );
+
+      const ua = navigator.userAgent || navigator.vendor || window.opera || '';
+      const isAndroid = /android/i.test(ua);
+      const isIOS = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
+
+      // Android: Chrome has no reliable "open calendar app" handoff for .ics —
+      // it just silently downloads the file. Almost every Android phone has
+      // Google Calendar, so send it there directly via a deep link instead.
+      if(isAndroid){
+        const gcalUrl = 'https://calendar.google.com/calendar/render?action=TEMPLATE'
+          + '&text=' + encodeURIComponent(EVT.title)
+          + '&dates=' + EVT.start + '/' + EVT.end
+          + '&details=' + encodeURIComponent(EVT.description)
+          + '&location=' + encodeURIComponent(EVT.location);
+        window.open(gcalUrl, '_blank');
+        return;
+      }
+
+      const ics = [
+        'BEGIN:VCALENDAR',
+        'VERSION:2.0',
+        'PRODID:-//Ahmed and Dalia//Wedding Invitation//EN',
+        'CALSCALE:GREGORIAN',
+        'BEGIN:VEVENT',
+        'UID:' + EVT.uid,
+        'DTSTAMP:20260101T000000Z',
+        'DTSTART:' + EVT.start,
+        'DTEND:' + EVT.end,
+        'SUMMARY:' + EVT.title,
+        'LOCATION:' + EVT.location,
+        'DESCRIPTION:' + EVT.description,
+        'END:VEVENT',
+        'END:VCALENDAR'
+      ].join('\r\n');
+
+      if(isIOS){
+        // iOS Safari opens the native "Add to Calendar" sheet when navigating
+        // directly to an ics data URI. Forcing a "download" (via the download
+        // attribute) breaks this and just saves the file instead.
+        const dataUrl = 'data:text/calendar;charset=utf-8,' + encodeURIComponent(ics);
+        window.location.href = dataUrl;
+      } else {
+        // Desktop (Windows/Mac/Linux): browsers have no OS-level handoff to a
+        // calendar app, so the standard, expected behavior here is to
+        // download the .ics — double-clicking it opens Outlook/Apple
+        // Calendar/whatever the user has set as the default handler.
+        const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'Ahmed-Dalia-Wedding.ics';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        setTimeout(() => URL.revokeObjectURL(url), 1000);
+      }
+    });
+  }
+
+  // ---- Easter eggs: 3 hidden triggers open the congrats overlay ----
+  const congratsOverlay = document.getElementById('congrats-overlay');
+  const congratsAudio = document.getElementById('congrats-audio');
+  const badgeSfx = document.getElementById('badge-sfx');
+  let pendingEggId = null;
+  let bgMusicWasPlaying = false;
+
+  function unlockBadge(id, opts){
+    const animate = !opts || opts.animate !== false;
+    const badge = document.getElementById('badge-' + id);
+    if(badge){
+      if(animate){
+        // restart the pop animation even if the badge was already unlocked
+        badge.classList.remove('unlocked');
+        void badge.offsetWidth; // force reflow so the animation replays
+      }
+      badge.classList.add('unlocked');
+    }
+    try { localStorage.setItem('egg-badge-' + id, '1'); } catch(e){}
+  }
+
+  // Restore previously-found badges on page load (no animation/sound on reload)
+  ['1','2','3'].forEach(id => {
+    try {
+      if(localStorage.getItem('egg-badge-' + id) === '1') unlockBadge(id, {animate:false});
+    } catch(e){}
+  });
+
+  function showCongrats(eggId){
+    if(!congratsOverlay) return;
+    pendingEggId = eggId || null;
+    congratsOverlay.classList.add('show');
+    congratsOverlay.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+
+    const bgMusicEl = document.getElementById('bg-music');
+    if(bgMusicEl && !bgMusicEl.paused){
+      bgMusicWasPlaying = true;
+      bgMusicEl.pause();
+    } else {
+      bgMusicWasPlaying = false;
+    }
+
+    if(congratsAudio){
+      const lang = document.documentElement.getAttribute('lang') === 'ar' ? 'ar' : 'en';
+      const src = lang === 'ar' ? 'congrats-ar.mp3' : 'congrats-en.mp3';
+      if(congratsAudio.getAttribute('data-src') !== src){
+        congratsAudio.src = src;
+        congratsAudio.setAttribute('data-src', src);
+      }
+      congratsAudio.currentTime = 0;
+      congratsAudio.play().catch(() => {});
+    }
+  }
+  function hideCongrats(){
+    if(!congratsOverlay) return;
+    congratsOverlay.classList.remove('show');
+    congratsOverlay.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+
+    if(congratsAudio){
+      congratsAudio.pause();
+      congratsAudio.currentTime = 0;
+    }
+
+    if(bgMusicWasPlaying){
+      const bgMusicEl = document.getElementById('bg-music');
+      if(bgMusicEl) bgMusicEl.play().catch(() => {});
+      bgMusicWasPlaying = false;
+    }
+
+    if(pendingEggId){
+      unlockBadge(pendingEggId);
+      if(badgeSfx){
+        badgeSfx.currentTime = 0;
+        badgeSfx.play().catch(() => {});
+      }
+      pendingEggId = null;
+    }
+  }
+  const congratsBack = document.getElementById('congrats-back');
+  if(congratsBack){
+    congratsBack.addEventListener('click', (event) => {
+      event.preventDefault();
+      hideCongrats();
+    });
+  }
+
+  // Egg 1: double-click the hero monogram (S+M)
+  const heroMonogram = document.querySelector('.hero-monogram');
+  if(heroMonogram) heroMonogram.addEventListener('dblclick', () => showCongrats('1'));
+
+  // Egg 2: double-click the footer text
+  const footerEl = document.querySelector('footer');
+  if(footerEl) footerEl.addEventListener('dblclick', () => showCongrats('2'));
+
+  // Egg 3: double-click the ornamental divider swirl right after the hero
+  const secretDivider = document.querySelector('.divider svg');
+  if(secretDivider) secretDivider.addEventListener('dblclick', () => showCongrats('3'));
+
+  // Music starts only when a guest chooses to play it.
+  const musicToggle = document.getElementById('music-toggle');
+  const bgMusicEl = document.getElementById('bg-music');
+  function updateMusicButton(){
+    const playing = !bgMusicEl.paused;
+    const ar = document.documentElement.lang === 'ar';
+    musicToggle.classList.toggle('muted', !playing);
+    musicToggle.setAttribute('aria-pressed', String(playing));
+    musicToggle.setAttribute('aria-label', ar ? (playing ? 'إيقاف الموسيقى' : 'تشغيل الموسيقى') : (playing ? 'Pause music' : 'Play music'));
+    document.getElementById('music-label').textContent = ar ? 'الموسيقى' : 'Music';
+  }
+  musicToggle.addEventListener('click', async () => {
+    if(bgMusicEl.paused){ bgMusicEl.volume = .35; try{ await bgMusicEl.play(); } catch(e){} }
+    else bgMusicEl.pause();
+    updateMusicButton();
+  });
+  bgMusicEl.addEventListener('play', updateMusicButton);
+  bgMusicEl.addEventListener('pause', updateMusicButton);
+
+  /* ============================================================
+     TRANSLATIONS
+     ============================================================ */
+  const TRANSLATIONS = {
+    "en": {
+        "couple.first": "Dalia",
+        "couple.last": "Ahmed",
+        "intro.kicker": "Wedding Invitation",
+        "intro.date": "14 October 2026 · Coco Loco",
+        "intro.hint": "Open the invitation",
+        "announcement.eyebrow": "A Joyful Beginning",
+        "announcement.text": "“Two hearts, one beautiful beginning, and a day we cannot wait to share with you.”",
+        "nav.welcome": "Welcome",
+        "nav.schedule": "The Day",
+        "nav.parking": "Getting There",
+        "nav.request": "Memories",
+        "nav.guestbook": "Guestbook",
+        "guestbook.eyebrow": "For The Couple",
+        "guestbook.title": "A little note, a lot of love",
+        "guestbook.lede": "A few kind words, a memory, a wish for the years ahead — whatever's in your heart, we'd love to keep it here.",
+        "guestbook.nameLabel": "Your Name",
+        "guestbook.namePlaceholder": "e.g. Alex",
+        "guestbook.relationLabel": "From (optional)",
+        "guestbook.relationPlaceholder": "e.g. Groom's friend",
+        "guestbook.messageLabel": "Your Message",
+        "guestbook.messagePlaceholder": "Write your wishes for Ahmed & Dalia...",
+        "guestbook.submit": "Send Message",
+        "guestbook.sending": "Sending...",
+        "guestbook.sent": "Sent — thank you!",
+        "guestbook.errorEmpty": "Please write a name and a message.",
+        "guestbook.errorSend": "Something went wrong — please try again.",
+        "guestbook.wallTitle": "Words we will treasure",
+        "guestbook.empty": "Be the first to leave a message.",
+        "guestbook.justNow": "just now",
+        "guestbook.countOne": "1 message",
+        "guestbook.countMany": "{n} messages",
+        "hero.eyebrow": "An invitation to our forever",
+        "hero.date": "Wednesday, 14 October 2026",
+        "hero.location": "Coco Loco Wedding Venue",
+        "hero.days": "Days",
+        "hero.hours": "Hours",
+        "hero.mins": "Minutes",
+        "hero.secs": "Seconds",
+        "hero.scroll": "Scroll",
+        "schedule.eyebrow": "The Details",
+        "schedule.title": "A day to remember",
+        "schedule.lede": "An evening of happy tears, warm embraces, and memories we will keep forever.",
+        "schedule.ceremony": "Photo Session",
+        "schedule.cocktail": "Reception",
+        "schedule.reception": "Wedding Begins",
+        "schedule.photoTime": "4:00 PM",
+        "schedule.receptionTime": "8:00 PM",
+        "schedule.weddingTime": "9:00 PM",
+        "schedule.venue": "A relaxed session to capture the day",
+        "schedule.venue2": "A warm welcome to our celebration",
+        "schedule.venue3": "Let the joy begin",
+        "directions.eyebrow": "A place for our beginning",
+        "directions.title": "Meet us at Coco Loco",
+        "directions.lede": "One special place, all our favorite people. Join us at Coco Loco Wedding Venue to celebrate the beginning of our forever.",
+        "directions.photoLabel": "Directions Map / Photo",
+        "parking.eyebrow": "Parking Details",
+        "parking.title": "Parking",
+        "parking.lede": "Please allow time to arrive and park. Follow the venue team’s guidance when you reach Coco Loco.",
+        "parking.photoLabel": "Parking Map / Photo",
+        "request.eyebrow": "Through your eyes",
+        "request.title": "Little moments. Forever memories.",
+        "request.lede": "The happy tears, the dance-floor smiles, the moments in between. We would love to see the day through your eyes and keep every little memory.",
+        "request.driveBtn": "Open Drive Folder",
+        "request.qrLabel": "Scan QR Code",
+        "footer.text": "14 October 2026 · Coco Loco Wedding Venue",
+        "guest.calendar": "Add to Calendar",
+        "guest.directions": "Get Directions",
+        "egg.title": "You Found a Secret!",
+        "egg.text": "Congratulations, you clever guest — you've uncovered one of our hidden surprises. Thanks for being part of our story.",
+        "egg.back": "Back to Invitation",
+        "header.message": "Leave us a note ↗",
+        "hero.description": "Our joy is incomplete without you ❤️ We would be honored to have you join us and share our happiness on our wedding day.",
+        "hero.discover": "Explore the day",
+        "hero.note": "",
+        "hero.save": "Save the date",
+        "hero.caption": "A beautiful day. An even more beautiful beginning.",
+        "countdown.title": "Counting the moments",
+        "countdown.subtitle": "Until we say forever",
+        "venue.name": "Coco Loco Wedding Venue",
+        "request.pending": "Our photo album will open here soon.",
+        "request.qrCaption": "Every little memory matters.",
+        "footer.script": "And He placed between you affection and mercy",
+        "footer.made": "Made with love, for a day full of it.",
+        "footer.back": "Back to the beginning ↑",
+        "venue.kicker": "The celebration",
+        "venue.time": "Reception from 8:00 PM · Cairo time",
+        "venue.facebook": "Discover the venue ↗",
+        "venue.map": "Open in Google Maps ↗",
+        "venue.arrival": "Come a little early, settle in, and let the evening unfold."
+    },
+    "ar": {
+        "couple.first": "داليا",
+        "couple.last": "أحمد",
+        "intro.kicker": "دعوة زفاف",
+        "intro.date": "١٤ أكتوبر ٢٠٢٦ · كوكو لوكو",
+        "intro.hint": "افتح الدعوة",
+        "announcement.eyebrow": "بداية مفعمة بالفرح",
+        "announcement.text": "«قلبان يجمعهما بداية جميلة، ويوم نترقبه بشوق لنشارك فرحته معكم»",
+        "nav.welcome": "الترحيب",
+        "nav.schedule": "يومنا",
+        "nav.parking": "الوصول",
+        "nav.request": "الذكريات",
+        "nav.guestbook": "الرسائل",
+        "guestbook.eyebrow": "للعروسين",
+        "guestbook.title": "كلمات صغيرة، وحب كبير",
+        "guestbook.lede": "بضع كلمات طيبة، ذكرى، أو أمنية للأيام القادمة — كل ما يخطر في قلبكم، يسعدنا أن نحتفظ به هنا.",
+        "guestbook.nameLabel": "اسمك",
+        "guestbook.namePlaceholder": "مثال: أحمد",
+        "guestbook.relationLabel": "صلتك بالعروسين (اختياري)",
+        "guestbook.relationPlaceholder": "مثال: صديق العريس",
+        "guestbook.messageLabel": "رسالتك",
+        "guestbook.messagePlaceholder": "اكتب أمنياتك لأحمد وداليا...",
+        "guestbook.submit": "إرسال الرسالة",
+        "guestbook.sending": "جارٍ الإرسال...",
+        "guestbook.sent": "تم الإرسال — شكرًا لك!",
+        "guestbook.errorEmpty": "يرجى كتابة الاسم والرسالة.",
+        "guestbook.errorSend": "حدث خطأ ما — يرجى المحاولة مرة أخرى.",
+        "guestbook.wallTitle": "كلمات نحتفظ بها في قلوبنا",
+        "guestbook.empty": "كن أول من يترك رسالة.",
+        "guestbook.justNow": "الآن",
+        "guestbook.countOne": "رسالة واحدة",
+        "guestbook.countMany": "{n} رسائل",
+        "hero.eyebrow": "دعوة لبداية حكايتنا",
+        "hero.date": "الأربعاء، ١٤ أكتوبر ٢٠٢٦",
+        "hero.location": "كوكو لوكو",
+        "hero.days": "يوم",
+        "hero.hours": "ساعة",
+        "hero.mins": "دقيقة",
+        "hero.secs": "ثانية",
+        "hero.scroll": "اسحب للأسفل",
+        "schedule.eyebrow": "التفاصيل",
+        "schedule.title": "يوم يبقى في الذاكرة",
+        "schedule.lede": "أمسية من الفرح والمحبة، وذكريات نحتفظ بها إلى الأبد.",
+        "schedule.ceremony": "جلسة تصوير",
+        "schedule.cocktail": "حفل الاستقبال",
+        "schedule.reception": "بداية حفل الزفاف",
+        "schedule.photoTime": "٤:٠٠ مساءً",
+        "schedule.receptionTime": "٨:٠٠ مساءً",
+        "schedule.weddingTime": "٩:٠٠ مساءً",
+        "schedule.venue": "لحظات جميلة نوثقها معًا",
+        "schedule.venue2": "مرحبًا بكم في فرحتنا",
+        "schedule.venue3": "لتبدأ أجمل اللحظات",
+        "directions.eyebrow": "يسعدنا حضوركم",
+        "directions.title": "نلتقي في كوكو لوكو",
+        "directions.lede": "مكان مميز، وكل أحبابنا. شاركونا الاحتفال ببداية حكايتنا في كوكو لوكو.",
+        "directions.photoLabel": "خريطة أو صورة الاتجاهات",
+        "parking.eyebrow": "تفاصيل موقف السيارات",
+        "parking.title": "موقف السيارات",
+        "parking.lede": "خصصوا وقتًا كافيًا للوصول وركن السيارة، واتبعوا إرشادات فريق المكان عند الوصول إلى كوكو لوكو.",
+        "parking.photoLabel": "خريطة أو صورة موقف السيارات",
+        "request.eyebrow": "من منظوركم",
+        "request.title": "لحظات صغيرة، وذكريات للأبد",
+        "request.lede": "دموع الفرح، والابتسامات، وكل اللحظات العفوية. نود أن نرى اليوم من منظوركم، لنحتفظ بكل ذكرى جميلة.",
+        "request.driveBtn": "افتح مجلد Drive",
+        "request.qrLabel": "امسح رمز الاستجابة السريعة",
+        "footer.text": "١٤ أكتوبر ٢٠٢٦ · كوكو لوكو",
+        "guest.calendar": "أضِف إلى التقويم",
+        "guest.directions": "احصل على الاتجاهات",
+        "egg.title": "لقد اكتشفت سرًا!",
+        "egg.text": "تهانينا أيها الضيف الفطن — لقد اكتشفت واحدة من مفاجآتنا الخفية. شكرًا لكونك جزءًا من حكايتنا.",
+        "egg.back": "العودة إلى الدعوة",
+        "header.message": "اتركوا لنا رسالة ↖",
+        "hero.description": "فرحتنا ما تكملش إلا بوجودكم ❤️ يشرفنا حضوركم ومشاركتنا فرحتنا في يوم زفافنا.",
+        "hero.discover": "اكتشفوا تفاصيل اليوم",
+        "hero.note": "",
+        "hero.save": "احفظوا الموعد",
+        "hero.caption": "يوم جميل، وبداية أجمل.",
+        "countdown.title": "نعدّ اللحظات",
+        "countdown.subtitle": "حتى تبدأ حكايتنا معًا",
+        "venue.name": "كوكو لوكو · قاعة الأفراح",
+        "request.pending": "سنفتح ألبوم الصور هنا قريبًا.",
+        "request.qrCaption": "كل ذكرى صغيرة تعني لنا الكثير.",
+        "footer.script": "وجعل بينكم مودة ورحمة",
+        "footer.made": "صُنع بحب، ليوم مليء بالحب.",
+        "footer.back": "العودة إلى البداية ↑",
+        "venue.kicker": "مكان الاحتفال",
+        "venue.time": "حفل الاستقبال من الساعة ٨ مساءً · بتوقيت القاهرة",
+        "venue.facebook": "اكتشفوا المكان ↖",
+        "venue.map": "افتحوا خرائط جوجل ↖",
+        "venue.arrival": "تعالوا مبكرًا قليلًا، واستعدوا لأمسية من الفرح."
+    }
+};
+
+  function applyLanguage(lang){
+    const dict = TRANSLATIONS[lang] || TRANSLATIONS.en;
+    document.title = lang === 'ar' ? 'أحمد وداليا | ١٤ أكتوبر ٢٠٢٦' : 'Ahmed & Dalia | 14 October 2026';
+    const toggle = document.getElementById('language-toggle');
+    toggle.textContent = lang === 'ar' ? 'English' : 'العربية';
+    toggle.lang = lang === 'ar' ? 'en' : 'ar';
+    toggle.setAttribute('aria-label', lang === 'ar' ? 'Switch to English' : 'Switch to Arabic');
+    try { localStorage.setItem('ahmed-dalia-language', lang); } catch(e){}
+    document.documentElement.setAttribute('lang', lang);
+    document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+    document.documentElement.setAttribute('data-lang', lang);
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if(dict[key] !== undefined) el.textContent = dict[key];
+    });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      const key = el.getAttribute('data-i18n-placeholder');
+      if(dict[key] !== undefined) el.setAttribute('placeholder', dict[key]);
+    });
+  }
+
+
+  let initialLang = 'en';
+  try { initialLang = localStorage.getItem('ahmed-dalia-language') === 'ar' ? 'ar' : 'en'; } catch(e){}
+  applyLanguage(initialLang);
+  updateMusicButton();
+  document.getElementById('language-toggle').addEventListener('click', () => {
+    applyLanguage(document.documentElement.lang === 'ar' ? 'en' : 'ar');
+    updateMusicButton();
+    if(typeof gbRenderMessages === 'function' && typeof gbLastMessages !== 'undefined') gbRenderMessages(gbLastMessages);
+  });
+  if('IntersectionObserver' in window){
+    const navObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) document.querySelectorAll('.nav-wrap a').forEach(link => link.classList.toggle('active', link.hash === '#' + entry.target.id));
+      });
+    }, {rootMargin:'-15% 0px -45% 0px',threshold:0});
+    document.querySelectorAll('main section[id]').forEach(section => navObserver.observe(section));
+  }
+  document.addEventListener('keydown', event => { if(event.key === 'Escape' && congratsOverlay.classList.contains('show')) hideCongrats(); });
+
+  // ---- photo carousels ----
+  document.querySelectorAll('[data-carousel]').forEach(carousel => {
+    const track = carousel.querySelector('.carousel-track');
+    const slides = Array.from(track.children);
+    const dotsWrap = carousel.querySelector('.carousel-dots');
+    const prevBtn = carousel.querySelector('.carousel-arrow.prev');
+    const nextBtn = carousel.querySelector('.carousel-arrow.next');
+    let index = 0;
+
+    slides.forEach((_, i) => {
+      const dot = document.createElement('span');
+      if(i === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => goTo(i));
+      dotsWrap.appendChild(dot);
+    });
+    const dots = Array.from(dotsWrap.children);
+
+    function goTo(i){
+      index = (i + slides.length) % slides.length;
+      track.style.transform = `translateX(-${index * 100}%)`;
+      dots.forEach((d, di) => d.classList.toggle('active', di === index));
+    }
+    prevBtn.addEventListener('click', () => goTo(index - 1));
+    nextBtn.addEventListener('click', () => goTo(index + 1));
+
+    track.style.direction = 'ltr';
+  });
+</script>
+
+<script src="motion.js"></script>
+
+<!-- Existing Firebase guestbook integration. -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script>
+  // ---- Firebase web app configuration ----
+  const firebaseConfig = {
+    apiKey: "AIzaSyDKIGkhm3dTJtR9yw2oGnE5ysDmxDgngHM",
+    authDomain: "ahmed-dalia.firebaseapp.com",
+    projectId: "ahmed-dalia",
+    storageBucket: "ahmed-dalia.firebasestorage.app",
+    messagingSenderId: "425234529039",
+    appId: "1:425234529039:web:4a1c20e95aa3946d099c7a"
+  };
+
+  const WEDDING_GUESTBOOK_ID = 'ahmed-dalia';
+  const gbConfigured = typeof firebase !== 'undefined' && !!firebaseConfig.apiKey && !!firebaseConfig.projectId && !!firebaseConfig.appId;
+
+  const gbForm       = document.getElementById('guestbook-form');
+  const gbNameInput  = document.getElementById('gb-name');
+  const gbRelInput   = document.getElementById('gb-relation');
+  const gbMsgInput   = document.getElementById('gb-message');
+  const gbCharCount  = document.getElementById('gb-char-count');
+  const gbSubmitBtn  = document.getElementById('gb-submit-btn');
+  const gbSubmitLbl  = document.getElementById('gb-submit-label');
+  const gbStatus     = document.getElementById('gb-status');
+  const gbWall       = document.getElementById('guestbook-wall');
+  const gbLoading    = document.getElementById('gb-loading');
+  const gbCountEl    = document.getElementById('gb-count');
+
+  if(gbMsgInput && gbCharCount){
+    gbMsgInput.addEventListener('input', () => {
+      gbCharCount.textContent = gbMsgInput.value.length;
+    });
+  }
+
+  function gbCurrentLang(){
+    return document.documentElement.getAttribute('data-lang') === 'ar' ? 'ar' : 'en';
+  }
+  function gbT(key){
+    const dict = TRANSLATIONS[gbCurrentLang()] || TRANSLATIONS.en;
+    return dict[key] !== undefined ? dict[key] : (TRANSLATIONS.en[key] || '');
+  }
+  function gbSetStatus(text, type){
+    if(!gbStatus) return;
+    gbStatus.textContent = text || '';
+    gbStatus.className = 'gb-status' + (type ? ' ' + type : '');
+  }
+  function gbTimeAgo(date){
+    if(!date) return '';
+    const secs = Math.floor((Date.now() - date.getTime()) / 1000);
+    if(secs < 60) return gbT('guestbook.justNow');
+    const mins = Math.floor(secs / 60);
+    if(mins < 60) return mins + 'm';
+    const hrs = Math.floor(mins / 60);
+    if(hrs < 24) return hrs + 'h';
+    const days = Math.floor(hrs / 24);
+    if(days < 30) return days + 'd';
+    return date.toLocaleDateString(gbCurrentLang() === 'ar' ? 'ar-EG' : 'en-US', { month:'short', day:'numeric' });
+  }
+  function gbUpdateCount(n){
+    if(!gbCountEl) return;
+    if(n <= 0){ gbCountEl.textContent = ''; return; }
+    gbCountEl.textContent = n === 1 ? gbT('guestbook.countOne') : gbT('guestbook.countMany').replace('{n}', n);
+  }
+  let gbLastMessages = [];
+  function gbRenderMessages(docs){
+    gbLastMessages = docs;
+    if(!gbWall) return;
+    gbWall.innerHTML = '';
+    if(docs.length === 0){
+      const empty = document.createElement('div');
+      empty.className = 'gb-empty';
+      empty.textContent = gbT('guestbook.empty');
+      gbWall.appendChild(empty);
+      gbUpdateCount(0);
+      return;
+    }
+    gbUpdateCount(docs.length);
+    docs.forEach(data => {
+      const note = document.createElement('div');
+      note.className = 'gb-note';
+
+      const text = document.createElement('div');
+      text.className = 'gb-text';
+      text.textContent = data.message; // textContent only — never innerHTML, avoids any injected markup
+
+      const meta = document.createElement('div');
+      meta.className = 'gb-meta';
+      const nameSpan = document.createElement('span');
+      nameSpan.textContent = data.name + (data.relation ? ' · ' + data.relation : '');
+      meta.appendChild(nameSpan);
+
+      if(data.createdAt){
+        const dot = document.createElement('span');
+        dot.className = 'gb-dot';
+        const time = document.createElement('span');
+        time.className = 'gb-time';
+        time.textContent = gbTimeAgo(data.createdAt);
+        meta.appendChild(dot);
+        meta.appendChild(time);
+      }
+
+      note.appendChild(text);
+      note.appendChild(meta);
+      gbWall.appendChild(note);
+    });
+  }
+
+  if(!gbConfigured){
+    if(gbForm) gbForm.addEventListener('submit', event => { event.preventDefault(); gbSetStatus(gbT('guestbook.errorSend'), 'error'); });
+    // No Firebase config yet — show a friendly placeholder instead of breaking.
+    if(gbLoading){
+      gbLoading.classList.remove('gb-loading');
+      gbLoading.classList.add('gb-empty');
+      gbLoading.textContent = gbT('guestbook.empty');
+    }
+  } else {
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+    // Keep this invitation's messages separate from the original couple's guestbook.
+    // Sort locally so the equality query does not need a new composite index.
+    const messagesRef = db.collection('messages').where('coupleId', '==', WEDDING_GUESTBOOK_ID).limit(200);
+
+    messagesRef.onSnapshot(
+      snapshot => {
+        const docs = snapshot.docs.map(doc => doc.data())
+          .filter(data => data.coupleId === WEDDING_GUESTBOOK_ID)
+          .map(d => {
+          return {
+            name: (d.name || '').toString().slice(0, 60),
+            relation: (d.relation || '').toString().slice(0, 60),
+            message: (d.message || '').toString().slice(0, 400),
+            createdAt: d.createdAt && d.createdAt.toDate ? d.createdAt.toDate() : null
+          };
+        }).sort((a, b) => (b.createdAt ? b.createdAt.getTime() : 0) - (a.createdAt ? a.createdAt.getTime() : 0));
+        gbRenderMessages(docs);
+      },
+      err => {
+        console.error('Guestbook load error:', err);
+        if(gbWall){
+          gbWall.innerHTML = '<div class="gb-empty">' + gbT('guestbook.errorSend') + '</div>';
+        }
+      }
+    );
+
+    if(gbForm){
+      gbForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const name = gbNameInput.value.trim();
+        const relation = gbRelInput.value.trim();
+        const message = gbMsgInput.value.trim();
+
+        if(!name || !message){
+          gbSetStatus(gbT('guestbook.errorEmpty'), 'error');
+          return;
+        }
+
+        gbSubmitBtn.disabled = true;
+        gbSubmitLbl.textContent = gbT('guestbook.sending');
+        gbSetStatus('', '');
+
+        try{
+          await db.collection('messages').add({
+            coupleId: WEDDING_GUESTBOOK_ID,
+            name: name.slice(0, 60),
+            relation: relation.slice(0, 60),
+            message: message.slice(0, 400),
+            createdAt: firebase.firestore.FieldValue.serverTimestamp()
+          });
+          gbForm.reset();
+          if(gbCharCount) gbCharCount.textContent = '0';
+          gbSetStatus(gbT('guestbook.sent'), 'success');
+        } catch(err){
+          console.error('Guestbook submit error:', err);
+          gbSetStatus(gbT('guestbook.errorSend'), 'error');
+        } finally {
+          gbSubmitBtn.disabled = false;
+          gbSubmitLbl.textContent = gbT('guestbook.submit');
+        }
+      });
+    }
+  }
+</script>
+
+</body>
+</html>
