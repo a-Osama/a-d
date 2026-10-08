@@ -259,43 +259,6 @@
   <div class="footer-bottom"><span data-i18n="footer.made">Made with love, for a day full of it.</span><a href="#welcome" data-i18n="footer.back">Back to the beginning ↑</a></div>
 </footer>
 
-<!-- ================= EASTER EGG: CONGRATS OVERLAY ================= -->
-<div id="congrats-overlay" role="dialog" aria-modal="true" aria-hidden="true">
-  <div class="congrats-inner">
-    <div class="congrats-icon" aria-hidden="true">🎉</div>
-    <h2 data-i18n="egg.title">You Found a Secret!</h2>
-    <p data-i18n="egg.text">Congratulations, you clever guest — you've uncovered one of our hidden surprises. Thanks for being part of our story.</p>
-    <!--
-      Congrats sound: drop your two MP3 files in the same folder as this HTML file
-      (right next to index.html), named exactly:
-        congrats-en.mp3  -> plays when the site is in English
-        congrats-ar.mp3  -> plays when the site is in Arabic
-      Nothing else to configure — the script below picks the right file automatically.
-    -->
-    <audio id="congrats-audio" preload="none"></audio>
-    <a href="#" id="congrats-back" class="pill-btn on-dark" data-i18n="egg.back">Back to Invitation</a>
-  </div>
-</div>
-
-<!--
-  Easter-egg badges: drop your 3 PNG files in the same folder as this HTML file
-  and update the src="" below for each one, e.g. src="badge1.png". They stay
-  hidden until that specific egg is found, then appear bottom-right and stay
-  there (even after the page is refreshed).
-
-  Badge sound effect: drop a very short MP3 (a little "ding"/"pop" works great)
-  in the same folder, named exactly:
-    badge-unlock.mp3
-  It plays automatically the moment the guest taps "Back to Invitation" and a
-  badge appears — nothing else to configure.
--->
-<audio id="badge-sfx" preload="none" src="badge-unlock.mp3"></audio>
-<div id="egg-badges" aria-hidden="true">
-  <div class="egg-badge" id="badge-1" title="Secret #1 found"><img src="badge1.png" alt="Secret 1 badge"></div>
-  <div class="egg-badge" id="badge-2" title="Secret #2 found"><img src="badge2.png" alt="Secret 2 badge"></div>
-  <div class="egg-badge" id="badge-3" title="Secret #3 found"><img src="badge3.png" alt="Secret 3 badge"></div>
-</div>
-
 <script>
   const WEDDING_DATE = new Date("2026-10-14T21:00:00+03:00");
 
@@ -431,129 +394,9 @@
     });
   }
 
-  // ---- Easter eggs: 3 hidden triggers open the congrats overlay ----
-  const congratsOverlay = document.getElementById('congrats-overlay');
-  const congratsAudio = document.getElementById('congrats-audio');
-  const badgeSfx = document.getElementById('badge-sfx');
-  let pendingEggId = null;
-  let bgMusicWasPlaying = false;
+  // Music starts only when a guest chooses to play it.
   const weddingFilm = document.getElementById('wedding-film');
   let filmMusicWasPlaying = false;
-  let filmWasPlayingBeforeCongrats = false;
-  let congratsActive = false;
-  let audioTurn = 0;
-
-  function unlockBadge(id, opts){
-    const animate = !opts || opts.animate !== false;
-    const badge = document.getElementById('badge-' + id);
-    if(badge){
-      if(animate){
-        // restart the pop animation even if the badge was already unlocked
-        badge.classList.remove('unlocked');
-        void badge.offsetWidth; // force reflow so the animation replays
-      }
-      badge.classList.add('unlocked');
-    }
-    try { localStorage.setItem('egg-badge-' + id, '1'); } catch(e){}
-  }
-
-  // Restore previously-found badges on page load (no animation/sound on reload)
-  ['1','2','3'].forEach(id => {
-    try {
-      if(localStorage.getItem('egg-badge-' + id) === '1') unlockBadge(id, {animate:false});
-    } catch(e){}
-  });
-
-  function showCongrats(eggId){
-    if(!congratsOverlay) return;
-    audioTurn++;
-    congratsActive = true;
-    if(badgeSfx){ badgeSfx.pause(); badgeSfx.onended = null; }
-    filmWasPlayingBeforeCongrats = !!weddingFilm && !weddingFilm.paused;
-    if(weddingFilm) weddingFilm.pause();
-    pendingEggId = eggId || null;
-    congratsOverlay.classList.add('show');
-    congratsOverlay.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-
-    const bgMusicEl = document.getElementById('bg-music');
-    if(bgMusicEl && (!bgMusicEl.paused || filmMusicWasPlaying)){
-      bgMusicWasPlaying = true;
-      bgMusicEl.pause();
-    } else {
-      bgMusicWasPlaying = false;
-    }
-
-    if(congratsAudio){
-      const lang = document.documentElement.getAttribute('lang') === 'ar' ? 'ar' : 'en';
-      const src = lang === 'ar' ? 'congrats-ar.mp3' : 'congrats-en.mp3';
-      if(congratsAudio.getAttribute('data-src') !== src){
-        congratsAudio.src = src;
-        congratsAudio.setAttribute('data-src', src);
-      }
-      congratsAudio.currentTime = 0;
-      congratsAudio.play().catch(() => {});
-    }
-  }
-  function hideCongrats(){
-    if(!congratsOverlay) return;
-    congratsOverlay.classList.remove('show');
-    congratsOverlay.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
-
-    if(congratsAudio){
-      congratsAudio.pause();
-      congratsAudio.currentTime = 0;
-    }
-
-    congratsActive = false;
-    const restoreFilm = filmWasPlayingBeforeCongrats;
-    const restoreMusic = bgMusicWasPlaying;
-    const restoreTurn = audioTurn;
-    filmWasPlayingBeforeCongrats = false;
-    bgMusicWasPlaying = false;
-    let restored = false;
-    const restoreAudio = () => {
-      if(restored || audioTurn !== restoreTurn || congratsActive) return;
-      restored = true;
-      if(restoreFilm && weddingFilm) weddingFilm.play().catch(() => {});
-      else if(restoreMusic){
-        filmMusicWasPlaying = false;
-        document.getElementById('bg-music')?.play().catch(() => {});
-      }
-    };
-    if(pendingEggId){
-      unlockBadge(pendingEggId);
-      pendingEggId = null;
-      if(badgeSfx){
-        badgeSfx.currentTime = 0;
-        badgeSfx.onended = restoreAudio;
-        badgeSfx.onerror = restoreAudio;
-        badgeSfx.play().catch(restoreAudio);
-      } else restoreAudio();
-    } else restoreAudio();
-  }
-  const congratsBack = document.getElementById('congrats-back');
-  if(congratsBack){
-    congratsBack.addEventListener('click', (event) => {
-      event.preventDefault();
-      hideCongrats();
-    });
-  }
-
-  // Egg 1: double-click the hero monogram (S+M)
-  const heroMonogram = document.querySelector('.hero-monogram');
-  if(heroMonogram) heroMonogram.addEventListener('dblclick', () => showCongrats('1'));
-
-  // Egg 2: double-click the footer text
-  const footerEl = document.querySelector('footer');
-  if(footerEl) footerEl.addEventListener('dblclick', () => showCongrats('2'));
-
-  // Egg 3: double-click the ornamental divider swirl right after the hero
-  const secretDivider = document.querySelector('.divider svg');
-  if(secretDivider) secretDivider.addEventListener('dblclick', () => showCongrats('3'));
-
-  // Music starts only when a guest chooses to play it.
   const musicToggle = document.getElementById('music-toggle');
   const bgMusicEl = document.getElementById('bg-music');
   function updateMusicButton(){
@@ -565,8 +408,6 @@
     document.getElementById('music-label').textContent = ar ? 'الموسيقى' : 'Music';
   }
   musicToggle.addEventListener('click', async () => {
-    audioTurn++;
-    if(badgeSfx){ badgeSfx.pause(); badgeSfx.onended = null; }
     if(bgMusicEl.paused){
       filmMusicWasPlaying = false;
       if(weddingFilm) weddingFilm.pause();
@@ -579,7 +420,7 @@
   bgMusicEl.addEventListener('play', updateMusicButton);
   bgMusicEl.addEventListener('pause', updateMusicButton);
 
-  // Keep the film, background music, and congratulations audio exclusive.
+  // Keep the film and background music exclusive.
   const filmFrame = document.getElementById('film-frame');
   const filmPlay = document.getElementById('film-play');
   const filmError = document.getElementById('film-error');
@@ -598,16 +439,13 @@
     try { await weddingFilm.play(); weddingFilm.focus(); } catch(error){ showFilmError(); }
   });
   weddingFilm.addEventListener('play', () => {
-    audioTurn++;
-    if(badgeSfx){ badgeSfx.pause(); badgeSfx.onended = null; }
-    if(congratsActive){ weddingFilm.pause(); return; }
     filmMusicWasPlaying = filmMusicWasPlaying || !bgMusicEl.paused;
     bgMusicEl.pause();
     filmError.hidden = true;
     filmFrame.classList.add('film-started');
   });
   function restoreFilmMusic(){
-    if(filmMusicWasPlaying && !congratsActive){
+    if(filmMusicWasPlaying){
       filmMusicWasPlaying = false;
       bgMusicEl.play().catch(() => {});
     }
@@ -697,9 +535,6 @@
         "footer.text": "14 October 2026 · Coco Loco Wedding Venue",
         "guest.calendar": "Add to Calendar",
         "guest.directions": "Get Directions",
-        "egg.title": "You Found a Secret!",
-        "egg.text": "Congratulations, you clever guest — you've uncovered one of our hidden surprises. Thanks for being part of our story.",
-        "egg.back": "Back to Invitation",
         "header.message": "Leave us a note ↗",
         "hero.description": "Our joy is incomplete without you ❤️ We would be honored to have you join us and share our happiness on our wedding day.",
         "hero.discover": "Explore the day",
@@ -796,9 +631,6 @@
         "footer.text": "١٤ أكتوبر ٢٠٢٦ · كوكو لوكو",
         "guest.calendar": "أضِف إلى التقويم",
         "guest.directions": "احصل على الاتجاهات",
-        "egg.title": "لقد اكتشفت سرًا!",
-        "egg.text": "تهانينا أيها الضيف الفطن — لقد اكتشفت واحدة من مفاجآتنا الخفية. شكرًا لكونك جزءًا من حكايتنا.",
-        "egg.back": "العودة إلى الدعوة",
         "header.message": "اتركوا لنا رسالة ↖",
         "hero.description": "فرحتنا ما تكملش إلا بوجودكم ❤️ يشرفنا حضوركم ومشاركتنا فرحتنا في يوم زفافنا.",
         "hero.discover": "اكتشفوا تفاصيل اليوم",
@@ -867,7 +699,6 @@
     }, {rootMargin:'-15% 0px -45% 0px',threshold:0});
     document.querySelectorAll('main section[id]').forEach(section => navObserver.observe(section));
   }
-  document.addEventListener('keydown', event => { if(event.key === 'Escape' && congratsOverlay.classList.contains('show')) hideCongrats(); });
 
   // ---- photo carousels ----
   document.querySelectorAll('[data-carousel]').forEach(carousel => {
