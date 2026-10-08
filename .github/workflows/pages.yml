@@ -1,0 +1,55 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the site
+        uses: actions/checkout@v6
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Prepare site files
+        run: |
+          mkdir -p "$RUNNER_TEMP/pages-site"
+          rsync -a \
+            --exclude='.git/' \
+            --exclude='.github/' \
+            --exclude='assets/couple/originals/' \
+            --exclude='README.md' \
+            --exclude='firebase.json' \
+            --exclude='firestore.rules' \
+            --exclude='.firebaserc' \
+            --exclude='.DS_Store' \
+            --exclude='arabic-footer-fixed.jpg' \
+            --exclude='invitation-memories-preview.jpg' \
+            --exclude='invitation-preview.jpg' \
+            --exclude='zen-memories-fixed.png' \
+            ./ "$RUNNER_TEMP/pages-site/"
+
+      - name: Upload site artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ${{ runner.temp }}/pages-site
+
+      - name: Publish site
+        id: deployment
+        uses: actions/deploy-pages@v5

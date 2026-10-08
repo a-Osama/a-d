@@ -1,8 +1,8 @@
 # Ahmed & Dalia
 
-A romantic, bilingual wedding invitation for 14 October 2026 at Coco Loco Wedding Venue. The design uses ivory paper, sage green, botanical details, and a custom garden illustration.
+A romantic, bilingual wedding invitation for 14 October 2026 at Coco Loco Wedding Venue. The design uses ivory paper, sage green, botanical details, and real portraits of the couple.
 
-Open `index.html` in a browser, or serve this folder with any static web server. No build step is needed. Keep `styles.css`, `fonts.css`, and the `assets` folder beside the page when publishing.
+Open `index.html` in a browser, or serve this folder with any static web server. No build step is needed. Keep both stylesheets, `motion.js`, `fonts.css`, the audio files, and the `assets` folder beside the page when publishing.
 
 Features include English and Arabic with a saved language preference, a countdown to the 9 PM wedding start, calendar downloads, directions, an optional music player, and a guestbook. The guestbook uses Cloud Firestore in the `ahmed-dalia` Firebase project, with records scoped by `coupleId: ahmed-dalia`. Firestore rules allow public reads and validated guestbook submissions for this invitation; public visitors cannot edit or delete messages. The database is in `me-central1` (Doha).
 
@@ -10,14 +10,20 @@ The original photo-sharing URL and QR image were placeholders. The memories sect
 
 Typefaces are served locally from `assets/fonts`; their open font licenses are included. The original unused decorative assets remain in the folder.
 
-## Artwork
+## Photos and film
 
-Generated with the built-in imagegen tool. The original is saved at `assets/garden-illustration.png`, and the optimized website asset is `assets/garden-illustration.webp`. `preview.jpg` is a refreshed preview of the redesigned invitation.
+The supplied originals are preserved in `assets/couple/originals/`. The hero uses the wedding portrait; the memories section uses the confetti portrait. Responsive WebP versions are available at 480, 960, and 1440 pixels wide. Only modest display brightness and saturation adjustments are applied; faces are unchanged. `preview.jpg` uses the wedding photo for social sharing.
 
-Final generation prompt:
+`assets/couple/our-film.mp4` preserves the complete 24.24-second film at 1280 × 720, with H.264 video, AAC audio, and fast-start metadata. It is approximately 4.5 MB. The poster is a still of the couple from the supplied film. No video source is requested until a guest presses play.
 
-> Create a refined editorial botanical wedding illustration to use as an atmospheric hero image for a romantic wedding invitation website. Portrait 2:3 composition. A dreamy elegant Mediterranean garden courtyard with a cream stone archway at the center, large climbing white roses and soft pale blush flowers with sage and olive leaves framing the arch, dappled sunlight, a little stone garden path leading through the arch into distant greenery, tiny pale flowers in the foreground. Painterly watercolor and gouache on warm ivory cotton paper, sophisticated fine art wedding stationery aesthetic, restrained colors of sage green, faded olive, warm cream and very subtle blush. Soft hand-painted edges, lovely natural detail, atmospheric depth, peaceful and romantic. The garden scene fills the entire image, no outer frame, no lettering, no text, no people, no furniture, no logos. This is a decorative illustration, not a real venue photograph.
+The film has native inline controls and a keyboard-accessible play button. It pauses Juliet and restores it on pause or completion only when music was previously playing. The congratulations audio temporarily pauses the active media, which resumes after the overlay and badge sound finish. Playback errors show a translated retry message.
 
 The venue section links to the supplied Coco Loco Facebook page and Google Maps directions, and embeds the destination at 27.1877335, 31.0409508. The schedule shows a photo session at 4 PM, reception at 8 PM, and wedding start at 9 PM Cairo time.
 
-Motion includes a staged hero entrance, botanical line drawing, gentle garden parallax, staggered schedule reveals, a reading-progress line, and animated question expansion. Reduced-motion preferences disable ornamental movement.
+Motion includes a staged hero entrance, botanical line drawing, gentle portrait parallax, staggered schedule reveals, a reading-progress line. Reduced-motion preferences disable ornamental movement.
+
+## Local verification
+
+Reviewed English and Arabic layouts at mobile (390 px), tablet (820 px), and desktop widths. Checked photo framing, horizontal overflow, deferred video loading, keyboard play/pause, music restoration, and congratulations audio exclusivity. Temporary local fixtures exercised failed-video feedback in both languages and the reduced-motion branch. Confirmed the live guestbook empty state without posting a message. JavaScript parses successfully; the MP4 metadata confirms full duration, H.264/AAC, 720p, and the fast-start atom order.
+
+GitHub Pages deploys automatically from `main` using `.github/workflows/pages.yml`. In the repository settings, set Pages' build and deployment source to **GitHub Actions**. The workflow packages the static site, excludes the preserved photo and film originals, and publishes it. The guestbook continues to use Firebase Firestore; its rules remain in `firestore.rules` and are managed separately from the website deployment.
