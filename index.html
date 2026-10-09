@@ -12,7 +12,7 @@
 <meta property="og:image:height" content="1600">
 <meta property="og:image:alt" content="Ahmed and Dalia celebrating their wedding beneath a floral arch">
 <meta name="description" content="Celebrate the wedding of Ahmed and Dalia on 14 October 2026 at Coco Loco Wedding Venue.">
-<meta name="theme-color" content="#f8f7f0" id="theme-color-meta">
+<meta name="theme-color" content="#1d241f" id="theme-color-meta">
 <meta property="og:type" content="website">
 
 <link rel="icon" href="assets/monogram.svg" type="image/svg+xml">
@@ -703,8 +703,11 @@
     themeColorMeta.content = isDark ? '#1d241f' : '#f8f7f0';
     try { localStorage.setItem('ahmed-dalia-theme', isDark ? 'dark' : 'light'); } catch(e){}
   }
-  let initialTheme = 'light';
-  try { initialTheme = localStorage.getItem('ahmed-dalia-theme') === 'dark' ? 'dark' : 'light'; } catch(e){}
+  let initialTheme = 'dark';
+  try {
+    const savedTheme = localStorage.getItem('ahmed-dalia-theme');
+    if(savedTheme === 'dark' || savedTheme === 'light') initialTheme = savedTheme;
+  } catch(e){}
   applyTheme(initialTheme);
   themeToggle.addEventListener('click', () => {
     applyTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark');
