@@ -12,7 +12,7 @@
 <meta property="og:image:height" content="1600">
 <meta property="og:image:alt" content="Ahmed and Dalia celebrating their wedding beneath a floral arch">
 <meta name="description" content="Celebrate the wedding of Ahmed and Dalia on 14 October 2026 at Coco Loco Wedding Venue.">
-<meta name="theme-color" content="#f8f7f0">
+<meta name="theme-color" content="#f8f7f0" id="theme-color-meta">
 <meta property="og:type" content="website">
 
 <link rel="icon" href="assets/monogram.svg" type="image/svg+xml">
@@ -46,6 +46,10 @@
     <a href="#leave-message" data-i18n="nav.guestbook">Guestbook</a>
   </nav>
   <div class="header-actions">
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" title="Switch to dark mode">
+      <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+      <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20.8 13A8.5 8.5 0 0 1 11 3.2 8.5 8.5 0 1 0 20.8 13Z"/></svg>
+    </button>
     <button class="language-toggle" id="language-toggle" aria-label="Switch to Arabic" lang="ar">العربية</button>
     <a class="header-rsvp" href="#leave-message" data-i18n="header.message">Leave us a note ↗</a>
   </div>
@@ -687,6 +691,24 @@
   let initialLang = 'en';
   try { initialLang = localStorage.getItem('ahmed-dalia-language') === 'ar' ? 'ar' : 'en'; } catch(e){}
   applyLanguage(initialLang);
+  const themeToggle = document.getElementById('theme-toggle');
+  const themeColorMeta = document.getElementById('theme-color-meta');
+  function applyTheme(theme){
+    const isDark = theme === 'dark';
+    document.documentElement.dataset.theme = isDark ? 'dark' : 'light';
+    themeToggle.setAttribute('aria-pressed', String(isDark));
+    const label = isDark ? 'Switch to light mode' : 'Switch to dark mode';
+    themeToggle.setAttribute('aria-label', label);
+    themeToggle.title = label;
+    themeColorMeta.content = isDark ? '#1d241f' : '#f8f7f0';
+    try { localStorage.setItem('ahmed-dalia-theme', isDark ? 'dark' : 'light'); } catch(e){}
+  }
+  let initialTheme = 'light';
+  try { initialTheme = localStorage.getItem('ahmed-dalia-theme') === 'dark' ? 'dark' : 'light'; } catch(e){}
+  applyTheme(initialTheme);
+  themeToggle.addEventListener('click', () => {
+    applyTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark');
+  });
   updateMusicButton();
   document.getElementById('language-toggle').addEventListener('click', () => {
     applyLanguage(document.documentElement.lang === 'ar' ? 'en' : 'ar');
